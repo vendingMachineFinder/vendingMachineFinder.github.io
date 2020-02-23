@@ -85,7 +85,7 @@
            var marker = new google.maps.Marker({
              position: feature.position,
              title: feature.title,
-             icon: '/images/machine.PNG',
+             icon: 'machine.png',
              map: map
            });
          });
@@ -98,25 +98,27 @@
                lng: position.coords.longitude
              };
 
-             infoWindow.setPosition(pos);
-             infoWindow.setContent('Where you are!');
-             infoWindow.open(map);
+             ourLocation.setPosition(pos);
+             ourLocation.setContent('Where you are!');
+             ourLocation.open(map);
              map.setCenter(pos);
            }, function() {
-             handleLocationError(true, infoWindow, map.getCenter());
+             handleLocationError(true, ourLocation, map.getCenter());
            });
          } else {
-           handleLocationError(false, infoWindow, map.getCenter());
+           handleLocationError(false, ourLocation, map.getCenter());
          }
        }
-
-       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-         infoWindow.setPosition(pos);
-         infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
-         infoWindow.open(map);
+       function handleLocationError(browserHasGeolocation, ourLocation, pos) {
+         ourLocation.setPosition(pos);
+         ourLocation.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
+         ourLocation.open(map);
        }
+
+       //var origin1 = ourLocation.pos.lat()
      </script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgZLx73_rqG_XUtIaVulTk8qucEEnvClM&callback=initMap"
      async defer></script>
    </body>
  </html>
+
