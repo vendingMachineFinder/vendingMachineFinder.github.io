@@ -34,126 +34,63 @@
            {
              position: new google.maps.LatLng(40.008253, -105.267504),
              title: 'ATLAS Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32),
-             // }
            }, {
              position: new google.maps.LatLng(40.006156, -105.265838),
              title: 'Farrand Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.008165, -105.267490),
              title: 'Duane Vending',
-             // image: {
-             //   src:'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.007615, -105.261845),
              title: 'DLC Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.007792, -105.272740),
              title: 'Hellems Vending',
-             // image: {
-             //   src:'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.008852, -105.270805),
              title: 'Norlin Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.004513, -105.264936),
              title: 'C4C Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.006946, -105.262822),
              title: 'CSEL Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.007127, -105.269241),
              title: 'Environmental Design Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.009292, -105.274895),
              title: 'Hale Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.007028, -105.271953),
              title: 'UMC Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.005816, -105.263397),
              title: 'Koelbel Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.008051, -105.264328),
              title: 'Math Library Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.009186, -105.268170),
              title: 'Stadium Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.008276, -105.274284),
              title: 'Geography Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }, {
              position: new google.maps.LatLng(40.004500, -105.266999),
              title: 'Regent Vending',
-             // image: {
-             //   src: 'machine.png',
-             //   size: new google.maps.Size(20, 32)
-             // }
            }
          ];
          features.forEach(function(feature){
            var marker = new google.maps.Marker({
              position: feature.position,
              title: feature.title,
-             icon: '/images/machine.PNG',
+             icon: 'machine.png',
              map: map
            });
          });
-         infoWindow = new google.maps.InfoWindow;
+
+         ourLocation = new google.maps.InfoWindow;
          if (navigator.geolocation) {
            navigator.geolocation.getCurrentPosition(function(position) {
              var pos = {
